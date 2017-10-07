@@ -19,7 +19,8 @@ export default ListView;
 
 const ulStyle = {
   listStyle: "none",
-  margin: "auto"
+  margin: "auto",
+  marginTop: "100px"
 };
 
 const listStyle = {

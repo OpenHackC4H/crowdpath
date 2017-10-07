@@ -16,13 +16,26 @@
 
 .App-title {
   font-size: 1.5em;
+  position: relative;
+  color: white;
+  padding-top: 75px;
 }
 
 .App-intro {
   font-size: large;
 }
 
+canvas {
+  position: absolute;
+  display: block !important;
+  max-height: 200px;
+}
+
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
