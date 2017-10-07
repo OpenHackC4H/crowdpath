@@ -10,13 +10,13 @@ import { showAllArticles } from "../actions";
 import ListView from "../components/ListView";
 
 class App extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.onLoad();
   }
 
   render() {
     const { articles: { articles } } = this.props;
-    console.log(this.props);
+    articles.sort((a, b) => b.upVotes - a.upVotes);
     return (
       <div className="App">
         <Background />
