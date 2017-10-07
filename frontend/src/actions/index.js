@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const showAllArticles = (dispatch, state) => {
   dispatch({ type: types.FETCH });
-  const API = "http://localhost:8080/articles";
+  const API = "http://10.66.192.19:8080/articles";
   axios
     .get(API)
     .then(res => {
