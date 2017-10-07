@@ -3,7 +3,7 @@ const payload = [
         id:0,
         title: "How to apply for a work permit",
         url:"https://www.migrationsverket.se/English/Private-individuals/Working-in-Sweden/Employed/How-to-apply.html",
-        text:"This is where you need to go to apply for a ork permit",
+        text:"This is where you need to go to apply for a work permit",
         upVotes: 100,
         downVotes:33,
         tags: []
