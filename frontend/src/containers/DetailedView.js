@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container, Col, Row } from "reactstrap";
 import Payload from "../constants/data";
-
+import FeedbackBar from "../components/FeedbackBar"
 class DetailedView extends Component {
   render() {
     const [iframeURL] = Payload.filter(
@@ -11,6 +11,9 @@ class DetailedView extends Component {
     return (
       <div className="DetailedView">
         <Container>
+          <Row>
+            <FeedbackBar/>
+          </Row>
           <Row>
             <Col>
               <iframe
