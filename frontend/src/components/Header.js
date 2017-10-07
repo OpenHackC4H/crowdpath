@@ -28,7 +28,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" className="navbar-dark navbar-expand-sm">
+        <Navbar color="dark" className="navbar-dark navbar-expand-lg">
           <NavbarToggler type="button" className="navbar-toggler navbar-toggler-right" onClick={this.toggleNavbar} />
           <NavbarBrand href="/">CrowdPath</NavbarBrand>
           <Collapse className="navbar-collapse" isOpen={!this.state.collapsed}>
