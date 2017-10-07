@@ -1,0 +1,35 @@
+.btn-primary {
+  border-color: #8064a2 !important;
+  background-color: #8064a2 !important;
+}
+
+.btn-primary:hover {
+  background-color: #a264a2 !important;
+}
+
+.up-button {
+  background-color: #222;
+  height: 50px;
+  width: 100px;
+  padding: 50px;
+  color: "danger";
+  float: left;
+}
+
+.down-button {
+  background-color: #222;
+  height: 50px;
+  width: 100px;
+  padding: 20px;
+  color: "danger";
+  float: left;
+}
+
+.report-button {
+  background-color: #222;
+  height: 50px;
+  width: 100px;
+  padding: 20px;
+  color: "danger";
+  float: right;
+}
