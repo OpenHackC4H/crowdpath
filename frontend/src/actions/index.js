@@ -1,4 +1,23 @@
 import * as types from "../constants/types";
+import axios from "axios";
+
+export const showAllArticles = (dispatch, state) => {
+  dispatch({ type: types.FETCH });
+  const API = "http://localhost:8080/articles";
+  axios
+    .get(API)
+    .then(res => {
+      dispatch({
+        type: types.SHOW_ALL,
+        payload: res.data
+      });
+    })
+    .catch(err =>
+      dispatch({
+        type: types.FETCH_FAILED
+      })
+    );
+};
 
 export const searchInformation = tagArr => {
   return {
