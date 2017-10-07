@@ -1,9 +1,13 @@
 import * as types from "../constants/types";
 import axios from "axios";
 
-export const showAllArticles = (dispatch, state) => {
+const API = "http://localhost:8080/articles";
+const config = {
+  headers: { "X-Requested-With": "XMLHttpRequest" }
+};
+
+export const showAllArticles = (dispatch, state, id) => {
   dispatch({ type: types.FETCH });
-  const API = "http://10.66.192.19:8080/articles";
   axios
     .get(API)
     .then(res => {
@@ -19,6 +23,23 @@ export const showAllArticles = (dispatch, state) => {
     );
 };
 
+export const updateAllVotes = id => {
+  console.log("aaaa", id);
+  return function(dispatch) {
+    dispatch({ type: types.FETCH });
+    axios
+      .get(API + `/${id}`)
+      .then(res => {
+        dispatch({
+          type: types.UPDATE_VOTES,
+          payload: res.data,
+          id: id
+        });
+      })
+      .catch(err => dispatch({ type: types.FETCH_FAILED }));
+  };
+};
+
 export const searchInformation = tagArr => {
   return {
     type: types.SEARCH,
@@ -26,17 +47,47 @@ export const searchInformation = tagArr => {
   };
 };
 
-export const upVoteArticle = id => {
-  return {
-    type: types.UPVOTE,
-    payload: id
+export const upVoteArticle = (id, upVotes) => {
+  return function(dispatch) {
+    axios
+      .patch(
+        API + `/${id}`,
+        {
+          upVotes: upVotes + 1
+        },
+        config
+      )
+      .then(() => {
+        axios.get(API + `/${id}`).then(res => {
+          dispatch({
+            type: types.UPDATE_VOTES,
+            payload: res.data,
+            id: id
+          });
+        });
+      });
   };
 };
 
-export const downVoteArticle = id => {
-  return {
-    type: types.DOWNVOTE,
-    payload: id
+export const downVoteArticle = (id, downVotes) => {
+  return function(dispatch) {
+    axios
+      .patch(
+        API + `/${id}`,
+        {
+          downVotes: downVotes + 1
+        },
+        config
+      )
+      .then(() => {
+        axios.get(API + `/${id}`).then(res => {
+          dispatch({
+            type: types.UPDATE_VOTES,
+            payload: res.data,
+            id: id
+          });
+        });
+      });
   };
 };
 
