@@ -28,14 +28,14 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" className="navbar-dark navbar-expand-lg">
-          <NavbarToggler type="button" className="navbar-toggler navbar-toggler-right" onClick={this.toggleNavbar} />
-          <NavbarBrand href="/">CrowdPath</NavbarBrand>
-          <Collapse className="navbar-collapse" isOpen={!this.state.collapsed}>
+        <Navbar color="dark" dark expand="md">
+          <NavbarBrand href="/">Crowd Path</NavbarBrand>
+          <NavbarToggler onClick={this.toggleNavbar} />
+          <Collapse isOpen={!this.state.collapsed} navbar>
             {" "}
             {/** HOC wrapping the NAV*/}
-            <Nav navbar>
-              <NavItem>
+            <Nav className="ml-auto" navbar>
+              {/* <NavItem>
                 <NavLink to="/" tag={RRNavLink}>
                   Home
                 </NavLink>
@@ -45,10 +45,7 @@ class Header extends Component {
               </NavItem>
               <NavItem>
                 <NavLink>Guide</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink>About</NavLink>
-              </NavItem>
+              </NavItem> */}
             </Nav>
           </Collapse>
         </Navbar>
