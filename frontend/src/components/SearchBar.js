@@ -8,7 +8,7 @@ const SearchBar = (props) => {
   return (
     <div>
       <InputGroup style={style}>
-        <Input />
+        <Input placeholder="What do you need?"/>
         <InputGroupAddon>Search</InputGroupAddon>
       </InputGroup>
       <br />
