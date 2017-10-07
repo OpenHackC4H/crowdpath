@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Col, Row } from "reactstrap";
 import Payload from "../constants/data";
 import FeedbackBar from "../components/FeedbackBar";
+import Footer from "../components/Footer";
 
 import "./DetailedView.css";
 
@@ -29,6 +30,7 @@ class DetailedView extends Component {
             </Col>
           </Row>
         </Container>
+        <Footer />
       </div>
     );
   }
