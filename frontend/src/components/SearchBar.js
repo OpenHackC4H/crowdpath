@@ -1,19 +1,19 @@
 import React from "react";
-import { InputGroup, InputGroupAddon, Input } from "reactstrap";
+import { InputGroup, InputGroupButton, Input } from "reactstrap";
+import "./SearchBar.css";
 
 const SearchBar = props => {
   const style = {
     minWidth: "900px",
     height: "50px",
-    margin: "auto"
+    margin: "auto",
   };
   return (
     <div>
-      <InputGroup style={style}>
-        <Input placeholder="What do you need?" />
-        <InputGroupAddon>Search</InputGroupAddon>
+      <InputGroup>
+        <Input />
+        <InputGroupButton color="primary">To the Right!</InputGroupButton>
       </InputGroup>
-      <br />
     </div>
   );
 };
