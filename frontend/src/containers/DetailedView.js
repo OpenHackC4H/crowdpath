@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Col, Row } from "reactstrap";
 import FeedbackBar from "../components/FeedbackBar";
 import { connect } from "react-redux";
+import Footer from "../components/Footer";
 
 class DetailedView extends Component {
   render() {
@@ -21,13 +22,14 @@ class DetailedView extends Component {
               <iframe
                 title="Detailed View"
                 src={iframeURL.url}
-                height="500"
+                height="900"
                 width="900"
                 style={iframeStyle}
               />
             </Col>
           </Row>
         </Container>
+        <Footer />
       </div>
     );
   }

@@ -1,0 +1,29 @@
+.Footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.Footer-header {
+  background-color: #222;
+  margin: 5px 0 0 0;
+  padding: 5px;
+  color: white;
+}
+
+.Footer-logo {
+  animation: App-logo-spin infinite 15s linear;
+  height: 50px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

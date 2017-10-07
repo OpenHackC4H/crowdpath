@@ -12,3 +12,8 @@
     min-width: 340px;
   }
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
