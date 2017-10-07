@@ -13,7 +13,12 @@ import configureStore from "./store/configureStore";
 
 const history = Browser();
 
-const store = configureStore();
+const storedState = state => {
+  const local = localStorage.getItem(state);
+  return local ? JSON.parse(local) : [];
+};
+
+const store = configureStore(storedState("state"));
 
 ReactDOM.render(
   <Provider store={store}>
