@@ -3,11 +3,6 @@ import { InputGroup, InputGroupButton, Input } from "reactstrap";
 import "./SearchBar.css";
 
 const SearchBar = props => {
-  const style = {
-    minWidth: "900px",
-    height: "50px",
-    margin: "auto",
-  };
   return (
     <div>
       <InputGroup>
