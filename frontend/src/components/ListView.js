@@ -2,16 +2,26 @@ import React, { Component } from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
 import ArticleCard from "./ArticleCard";
 // Provisional import
-import Payload from "../constants/data";
+// import Payload from "../constants/data";
 
 class ListView extends Component {
+  renderListView(payload) {
+    console.log(payload);
+    if (payload) {
+      const articles = payload.map(article => (
+        <ListGroupItem key={article.id} style={listStyle}>
+          <ArticleCard article={article} />
+        </ListGroupItem>
+      ));
+      return <ListGroup style={ulStyle}>{articles}</ListGroup>;
+    } else {
+      return null;
+    }
+  }
+
   render() {
-    const articles = Payload.map(article => (
-      <ListGroupItem key={article.id} style={listStyle}>
-        <ArticleCard article={article} />
-      </ListGroupItem>
-    ));
-    return <ListGroup style={ulStyle}>{articles}</ListGroup>;
+    const { payload } = this.props;
+    return <div>{this.renderListView(payload)}</div>;
   }
 }
 
