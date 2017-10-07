@@ -11,6 +11,19 @@ export default function reduceArticles(
         fetchStatus: "success",
         articles: action.payload
       };
+    case types.FETCH:
+      return {
+        ...state,
+        fetchStatus: "fetching"
+      };
+    case types.UPDATE_VOTES:
+      return {
+        ...state,
+        articles: state.articles.map(
+          article => (article.id === action.id ? action.payload : article)
+        )
+      };
+
     default:
       return state;
   }
