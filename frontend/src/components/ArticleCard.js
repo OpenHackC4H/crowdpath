@@ -6,7 +6,7 @@ const ArticleCard = ({
   props,
   article: {id, title, url, text, upVotes, downVotes }
 }) => {
-  const articleURL = `/DetailedView:${id}`;
+  const articleURL = `/DetailedView/${id}`;
   return (
     <Row>
       <Col>
