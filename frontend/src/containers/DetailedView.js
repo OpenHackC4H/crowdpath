@@ -13,7 +13,7 @@ class DetailedView extends Component {
       <div className="DetailedView">
         <Container>
           <Row>
-            <FeedbackBar />
+            <FeedbackBar article={iframeURL} />
           </Row>
           <Row>
             <Col>
