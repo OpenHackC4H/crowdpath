@@ -15,6 +15,22 @@ const payload = [
         upVotes: 40,
         downVotes:53,
         tags:[]
+    },{
+        id:2,
+        title: "Title 2",
+        url:"fakeurl 2",
+        text:"Useless text",
+        upVotes: 200,
+        downVotes:17,
+        tags:[]
+    },{
+        id:3,
+        title: "Title 3",
+        url:"fakeurl 3",
+        text:"Useless text too",
+        upVotes: 40,
+        downVotes:501,
+        tags:[]
     }
 ]
 
