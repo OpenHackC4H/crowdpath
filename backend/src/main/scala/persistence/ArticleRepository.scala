@@ -2,9 +2,16 @@ package persistence
 
 import model.Article
 
-class ArticleRepository {
-  def getArticles: List[Article] = {
-    List(new Article("Page 1", "www.page1.com"),
-      new Article("Page 2", "www.page2.com"))
-  }
+trait ArticleRepository {
+
+  def getArticles: List[Article]
+
+  def getArticle(id: Int): Article
+
+  def createArticle(title: String, url: String): Article
+
+  def updateArticle(newArticle: Article): Article
+
+  def deleteArticle(id: Int): Article
+
 }
