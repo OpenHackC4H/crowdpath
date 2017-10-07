@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Container, Col, Row } from "reactstrap";
-import Payload from "../constants/data";
 import FeedbackBar from "../components/FeedbackBar";
+import { connect } from "react-redux";
 
 class DetailedView extends Component {
   render() {
-    const [iframeURL] = Payload.filter(
+    const { data: { articles } } = this.props;
+    const [iframeURL] = articles.filter(
       article => article.id === Number(this.props.match.params.id)
     );
 
@@ -13,7 +14,7 @@ class DetailedView extends Component {
       <div className="DetailedView">
         <Container>
           <Row>
-            <FeedbackBar article={iframeURL} />
+            <FeedbackBar currentArticle={iframeURL} />
           </Row>
           <Row>
             <Col>
@@ -22,7 +23,7 @@ class DetailedView extends Component {
                 src={iframeURL.url}
                 height="500"
                 width="900"
-                margin="auto"
+                style={iframeStyle}
               />
             </Col>
           </Row>
@@ -32,4 +33,12 @@ class DetailedView extends Component {
   }
 }
 
-export default DetailedView;
+function mapStateToprops(state) {
+  return { data: state.articles };
+}
+export default connect(mapStateToprops, null)(DetailedView);
+
+const iframeStyle = {
+  width: "100%",
+  marginTop: "75px"
+};
