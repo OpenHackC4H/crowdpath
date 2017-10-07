@@ -10,7 +10,7 @@ const routes = (
     <Header />
     <Switch>
       <Route exact path="/" component={App} />
-      <Route path="/DetailedView:id" component={DetailedView} />
+      <Route path="/DetailedView/:id" component={DetailedView} />
     </Switch>
   </div>
 );
