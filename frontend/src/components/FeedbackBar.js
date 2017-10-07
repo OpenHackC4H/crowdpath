@@ -1,19 +1,19 @@
-import React from 'react';
-import { Button, ButtonGroup } from 'reactstrap';
+import React from "react";
+import { Button, ButtonGroup, Container, Row, Col } from "reactstrap";
+import "./FeedbackBar.css";
 
 class FeedbackBar extends React.Component {
   render() {
-    const style = {
-      minWidth: "900px",
-      height: "50px",
-      margin: "auto",
-    };
     return (
-      <ButtonGroup>
-        <Button>Vote Up</Button>{' '}
-        <Button>Vote Down</Button>{' '}
-        <Button>Report</Button>
-      </ButtonGroup>
+      <Container>
+        <Button className="up-button" color="success">
+          Vote Up
+        </Button>{" "}
+        <Button className="down-button" color="danger">
+          Vote Down
+        </Button>{" "}
+        <Button className="report-button">Report</Button>
+      </Container>
     );
   }
 }
