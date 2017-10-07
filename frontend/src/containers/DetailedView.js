@@ -3,6 +3,8 @@ import { Container, Col, Row } from "reactstrap";
 import Payload from "../constants/data";
 import FeedbackBar from "../components/FeedbackBar";
 
+import "./DetailedView.css";
+
 class DetailedView extends Component {
   render() {
     const [iframeURL] = Payload.filter(
@@ -12,7 +14,7 @@ class DetailedView extends Component {
     return (
       <div className="DetailedView">
         <Container>
-          <Row>
+          <Row className="feed-back">
             <FeedbackBar article={iframeURL} />
           </Row>
           <Row>
@@ -20,7 +22,7 @@ class DetailedView extends Component {
               <iframe
                 title="Detailed View"
                 src={iframeURL.url}
-                height="500"
+                height="900"
                 width="900"
                 margin="auto"
               />

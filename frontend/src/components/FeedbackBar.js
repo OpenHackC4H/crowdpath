@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, ButtonGroup, Container, Row, Col } from "reactstrap";
 import "./FeedbackBar.css";
-
 class FeedbackBar extends React.Component {
   render() {
     return (

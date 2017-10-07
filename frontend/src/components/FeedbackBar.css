@@ -9,7 +9,6 @@
 
 .up-button {
   background-color: #222;
-  height: 50px;
   width: 100px;
   padding: 50px;
   color: "danger";
@@ -18,7 +17,6 @@
 
 .down-button {
   background-color: #222;
-  height: 50px;
   width: 100px;
   padding: 20px;
   color: "danger";
@@ -27,9 +25,9 @@
 
 .report-button {
   background-color: #222;
-  height: 50px;
   width: 100px;
   padding: 20px;
   color: "danger";
   float: right;
+  margin: auto;
 }
