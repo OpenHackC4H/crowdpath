@@ -1,49 +1,42 @@
 import React from "react";
-import {
-  Button,
-  ListGroupItemHeading,
-  ListGroupItemText,
-  Row,
-  Col
-} from "reactstrap";
+import { ListGroupItemHeading, ListGroupItemText, Row, Col } from "reactstrap";
+import { NavLink as RRNavLink } from "react-router-dom";
 
 const ArticleCard = ({
   props,
-  article: { title, url, text, upVotes, downVotes }
+  article: {id, title, url, text, upVotes, downVotes }
 }) => {
+  const articleURL = `/DetailedView:${id}`;
   return (
-    <div>
-      <Row>
-        <Col>
-          <ListGroupItemHeading className="lead">{title}</ListGroupItemHeading>
-        </Col>
-        <Col>
-          <ListGroupItemText>
-            <Row>
-              <Col>
-                <span className="lead" style={upVotesStyle}>
-                  {upVotes} ↑
-                </span>
-              </Col>
-              <Col>
-                <span className="lead" style={downVotesStyle}>
-                  {downVotes} ↓
-                </span>
-              </Col>
-            </Row>
-          </ListGroupItemText>
-        </Col>
-      </Row>
-    </div>
+    <Row>
+      <Col>
+        <ListGroupItemHeading className="lead">
+          <RRNavLink to={articleURL}>{title}</RRNavLink>
+        </ListGroupItemHeading>
+      </Col>
+      <Col>
+        <Row>
+          <Col>
+            <ListGroupItemText>
+              <span className="lead" style={upVotesStyle}>
+                {upVotes} ↑
+              </span>
+            </ListGroupItemText>
+          </Col>
+          <Col>
+            <ListGroupItemText>
+              <span className="lead" style={downVotesStyle}>
+                {downVotes} ↓
+              </span>
+            </ListGroupItemText>
+          </Col>
+        </Row>
+      </Col>
+    </Row>
   );
 };
 
 export default ArticleCard;
-
-const cardStyle = {
-  maxWidth: "auto",
-  textAlign: "left"
-};
 
 const votesStyle = {
   margin: "auto",
