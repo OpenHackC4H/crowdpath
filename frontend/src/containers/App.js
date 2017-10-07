@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { Container, Col, Row } from "reactstrap";
 import logo from "../logo.svg";
 import "./App.css";
+import SearchBar from "../components/SearchBar";
 
 import ListView from "../components/ListView";
 
@@ -15,7 +17,14 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <ListView/>
+        <Container>
+          <Row>
+            <Col>
+              <SearchBar />
+            </Col>
+          </Row>
+        </Container>
+        <ListView />
       </div>
     );
   }
