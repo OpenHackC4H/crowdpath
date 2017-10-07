@@ -29,7 +29,11 @@ class Header extends Component {
     return (
       <div>
         <Navbar color="dark" dark expand="md">
-          <NavbarBrand href="/">Crowd Path</NavbarBrand>
+          <NavbarBrand href="">
+            <RRNavLink style={{ color: "white" }} to="/">
+              Crowd Path
+            </RRNavLink>
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggleNavbar} />
           <Collapse isOpen={!this.state.collapsed} navbar>
             {" "}
