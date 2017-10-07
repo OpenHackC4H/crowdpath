@@ -8,9 +8,9 @@ import {
   NavItem,
   NavLink
 } from "reactstrap";
-import "./Header.css";
+import "./Footer.css";
 
-export default class Example extends React.Component {
+class Footer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -50,7 +50,7 @@ export default class Example extends React.Component {
                 </NavLink>
               </NavItem>
               <p class="navbar-text" style={{ color: "grey" }}>
-                ©Developed for OpenHack
+                Developed for OpenHack
               </p>
             </Nav>
           </Collapse>
@@ -59,3 +59,5 @@ export default class Example extends React.Component {
     );
   }
 }
+
+export default Footer

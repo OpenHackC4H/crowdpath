@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Container } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import "./App.css";
 import SearchBar from "../components/SearchBar";
 import Background from "../components/Background";
-
+import Footer from "../components/Footer";
 import { connect } from "react-redux";
 import { showAllArticles } from "../actions";
 
@@ -28,6 +28,7 @@ class App extends Component {
           Explore our selected topics - or - search something
         </p>
         <ListView payload={articles} />
+          <Footer className="footer" />
       </div>
     );
   }
