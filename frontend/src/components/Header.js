@@ -2,11 +2,7 @@ import React, { Component } from "react";
 import {
   Collapse,
   Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink
+  Nav
 } from "reactstrap";
 
 import { NavLink as RRNavLink } from "react-router-dom";
@@ -16,7 +12,6 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = { collapsed: true };
-    this.toggleNavbar = this.toggleNavbar.bind(this);
   }
 
   toggleNavbar = () => {
@@ -29,12 +24,14 @@ class Header extends Component {
     return (
       <div>
         <Navbar color="dark" dark expand="md">
-          <NavbarBrand href="">
-            <RRNavLink style={{ color: "white" }} to="/">
-              Crowd Path
-            </RRNavLink>
-          </NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} />
+          <RRNavLink
+            style={{ color: "white", width: "300px", fontWeight: "bold" }}
+            className="lead"
+            to="/"
+          >
+            Crowd Path
+          </RRNavLink>
+          {/* <NavbarToggler onClick={this.toggleNavbar} /> */}
           <Collapse isOpen={!this.state.collapsed} navbar>
             {" "}
             {/** HOC wrapping the NAV*/}
