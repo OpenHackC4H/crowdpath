@@ -3,15 +3,19 @@ const payload = [
         id:0,
         title: "Title 0",
         url:"fakeurl 0",
-        up: 100,
-        down:33
+        text:"This is a dummy text",
+        upVotes: 100,
+        downVotes:33,
+        tags: []
     }, {
         id:1,
         title: "Title 1",
         url:"fakeurl 1",
-        up: 40,
-        down:53
+        text:"This is a dummy text too",
+        upVotes: 40,
+        downVotes:53,
+        tags:[]
     }
 ]
 
-export const payload;
+export default payload;
