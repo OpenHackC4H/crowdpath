@@ -1,20 +1,40 @@
 import React from "react";
-import { Card, Button, CardTitle, CardSubtitle, CardText } from "reactstrap";
+import {
+  Button,
+  ListGroupItemHeading,
+  ListGroupItemText,
+  Row,
+  Col
+} from "reactstrap";
 
 const ArticleCard = ({
   props,
   article: { title, url, text, upVotes, downVotes }
 }) => {
   return (
-    <Card style={cardStyle} body>
-      <CardTitle>{title}</CardTitle>
-      <CardSubtitle>
-        <span style={upVotesStyle}>{upVotes} ↑</span> {" "}
-        <span style={downVotesStyle}>{downVotes} ↓</span>
-      </CardSubtitle>
-      <CardText>{text}</CardText>
-      <Button color="info" style={buttonStyle}>{url}</Button>
-    </Card>
+    <div>
+      <Row>
+        <Col>
+          <ListGroupItemHeading className="lead">{title}</ListGroupItemHeading>
+        </Col>
+        <Col>
+          <ListGroupItemText>
+            <Row>
+              <Col>
+                <span className="lead" style={upVotesStyle}>
+                  {upVotes} ↑
+                </span>
+              </Col>
+              <Col>
+                <span className="lead" style={downVotesStyle}>
+                  {downVotes} ↓
+                </span>
+              </Col>
+            </Row>
+          </ListGroupItemText>
+        </Col>
+      </Row>
+    </div>
   );
 };
 
@@ -25,15 +45,17 @@ const cardStyle = {
   textAlign: "left"
 };
 
+const votesStyle = {
+  margin: "auto",
+  float: "right"
+};
+
 const upVotesStyle = {
+  ...votesStyle,
   color: "green"
 };
 
 const downVotesStyle = {
+  ...votesStyle,
   color: "red"
-};
-
-const buttonStyle = {
-  width: "200px",
-  margin: "auto"
 };

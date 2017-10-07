@@ -19,10 +19,14 @@ export default ListView;
 
 const ulStyle = {
   listStyle: "none",
+  margin: "auto"
 };
 
 const listStyle = {
   display: "block",
   float: "left",
+  minWidth: "900px",
+  margin: "auto",
+  textAlign: "left",
   border: "none"
 };
