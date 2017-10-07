@@ -6,7 +6,6 @@ import ArticleCard from "./ArticleCard";
 
 class ListView extends Component {
   renderListView(payload) {
-    console.log(payload);
     if (payload) {
       const articles = payload.map(article => (
         <ListGroupItem key={article.id} style={listStyle}>
@@ -36,8 +35,8 @@ const ulStyle = {
 const listStyle = {
   display: "block",
   float: "left",
-  minWidth: "900px",
   margin: "auto",
+  width: "90%",
   textAlign: "left",
   border: "none"
 };
