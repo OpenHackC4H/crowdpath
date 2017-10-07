@@ -4,7 +4,7 @@ import { NavLink as RRNavLink } from "react-router-dom";
 
 const ArticleCard = ({
   props,
-  article: {id, title, url, text, upVotes, downVotes }
+  article: { id, title, url, text, upVotes, downVotes }
 }) => {
   const articleURL = `/DetailedView/${id}`;
   return (

@@ -27,5 +27,3 @@ export const readArticle = id => {
     payload: id
   };
 };
-
-

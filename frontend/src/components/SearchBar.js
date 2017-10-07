@@ -6,7 +6,7 @@ const SearchBar = props => {
   return (
     <div>
       <InputGroup>
-        <Input placeholder="What do you need?"/>
+        <Input placeholder="What do you need?" />
         <InputGroupButton color="primary">Find it!</InputGroupButton>
       </InputGroup>
     </div>

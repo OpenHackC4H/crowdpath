@@ -1,15 +1,14 @@
 .navbar-nav {
-    margin: auto;
+  margin: auto;
+}
+
+.navbar-nav .nav-item {
+  min-width: 200px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 552px) {
+  nav {
+    min-width: 340px;
   }
-  
-  .navbar-nav .nav-item {
-    min-width: 200px;
-    text-align: center;
-  }
-  
-  @media only screen and (min-width: 552px) {
-    nav {
-      min-width: 340px;
-    }
-  }
-  
+}
