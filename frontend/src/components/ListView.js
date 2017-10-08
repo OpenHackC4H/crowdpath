@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
 import ArticleCard from "./ArticleCard";
-// Provisional import
-// import Payload from "../constants/data";
+
 
 class ListView extends Component {
   renderListView(payload) {

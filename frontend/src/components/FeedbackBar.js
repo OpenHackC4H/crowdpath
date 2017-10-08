@@ -7,15 +7,37 @@ import "./FeedbackBar.css";
 import { upVoteArticle, downVoteArticle } from "../actions";
 
 class FeedbackBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      votedUp: false,
+      votedDown: false
+    };
+  }
   functionToUpVote(id, upVotes) {
+    this.setState({ votedUp: true });
     this.props.actions.upVoteArticle(id, upVotes);
   }
 
   functionToDownVote(id, downVotes) {
+    this.setState({ votedDown: true });
     this.props.actions.downVoteArticle(id, downVotes);
   }
 
+  afterVoteMessage() {
+    if (this.state.votedDown || this.state.votedUp) {
+      return (
+        <span className="lead">
+          Thanks you for your {this.state.votedUp ? "up" : "down"} vote
+        </span>
+      );
+    } else {
+      return null;
+    }
+  }
+
   render() {
+    const { votedUp, votedDown } = this.state;
     const currentId = this.props.currentArticle.id;
     const [thisArticle] = this.props.articles.filter(
       article => (article.id === currentId ? article : null)
@@ -27,28 +49,48 @@ class FeedbackBar extends Component {
             <Button
               style={buttonStyle}
               className="up-button"
-              color="success"
-              onClick={this.functionToUpVote.bind(
-                this,
-                currentId,
-                thisArticle.upVotes
-              )}
+              color={votedUp ? "secondary" : "success"}
+              onClick={
+                votedUp || votedDown
+                  ? ""
+                  : this.functionToUpVote.bind(
+                      this,
+                      currentId,
+                      thisArticle.upVotes
+                    )
+              }
             >
               {thisArticle.upVotes} Vote Up
             </Button>{" "}
             <Button
               className="down-button"
-              color="danger"
+              color={votedDown ? "secondary" : "danger"}
               style={buttonStyle}
-              onClick={this.functionToDownVote.bind(
-                this,
-                currentId,
-                thisArticle.downVotes
-              )}
+              onClick={
+                votedDown || votedUp
+                  ? ""
+                  : this.functionToDownVote.bind(
+                      this,
+                      currentId,
+                      thisArticle.downVotes
+                    )
+              }
             >
               {thisArticle.downVotes} Vote Down
             </Button>{" "}
-            <Button className="report-button">Report</Button>
+            <Button color="warning" className="report-button">
+              Report
+            </Button>
+          </Col>
+        </Row>
+        <Row>
+          <Col
+            style={{
+              textAlign: "center",
+              marginTop: "9px"
+            }}
+          >
+            {this.afterVoteMessage()}
           </Col>
         </Row>
       </Container>

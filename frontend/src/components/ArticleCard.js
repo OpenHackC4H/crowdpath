@@ -19,14 +19,14 @@ const ArticleCard = ({
           <Col>
             <ListGroupItemText>
               <span className="lead" style={upVotesStyle}>
-                {upVotes} ↑
+                {upVotes > 1000 ? `${Math.ceil(upVotes / 100)/10}k` : upVotes} ↑
               </span>
             </ListGroupItemText>
           </Col>
           <Col>
             <ListGroupItemText>
               <span className="lead" style={downVotesStyle}>
-                {downVotes} ↓
+                {downVotes > 1000 ? `${Math.ceil(downVotes / 100)/10}k` : downVotes} ↓
               </span>
             </ListGroupItemText>
           </Col>
