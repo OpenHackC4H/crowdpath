@@ -1,7 +1,7 @@
 import * as types from "../constants/types";
 import axios from "axios";
 
-const API = "http://localhost:8080/articles";
+const API = "http://10.66.192.19:8080/articles";
 const config = {
   headers: { "X-Requested-With": "XMLHttpRequest" }
 };
@@ -24,7 +24,6 @@ export const showAllArticles = (dispatch, state, id) => {
 };
 
 export const updateAllVotes = id => {
-  console.log("aaaa", id);
   return function(dispatch) {
     dispatch({ type: types.FETCH });
     axios
@@ -37,13 +36,6 @@ export const updateAllVotes = id => {
         });
       })
       .catch(err => dispatch({ type: types.FETCH_FAILED }));
-  };
-};
-
-export const searchInformation = tagArr => {
-  return {
-    type: types.SEARCH,
-    payload: tagArr
   };
 };
 
@@ -95,5 +87,12 @@ export const readArticle = id => {
   return {
     type: types.READ,
     payload: id
+  };
+};
+
+export const addTags = tagArr => {
+  return {
+    type: types.SEARCH,
+    payload: tagArr
   };
 };
