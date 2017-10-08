@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
 import ArticleCard from "./ArticleCard";
-
+import "./ListView.css";
 
 class ListView extends Component {
   renderListView(payload) {
@@ -36,7 +36,6 @@ const listStyle = {
   display: "block",
   float: "left",
   margin: "auto",
-  width: "65%",
   textAlign: "left",
   border: "none"
 };
