@@ -4,7 +4,7 @@
 
 
 ## Open Hack Gbg 2017 - Hacking for Humanity
-With this project we try to contribute to two caes from the Hack:
+With this project we try to contribute to two cases from the Hack:
 
 ## 1. Just Arrived - 
  
