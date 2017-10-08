@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import {
-  Collapse,
-  Navbar,
-  Nav
-} from "reactstrap";
+import { Collapse, Navbar, Nav } from "reactstrap";
 
 import { NavLink as RRNavLink } from "react-router-dom";
 import "./Header.css";
+import logo from "../crowdpath-logo-line-bright.png";
 
 class Header extends Component {
   constructor(props) {
@@ -29,7 +26,7 @@ class Header extends Component {
             className="lead"
             to="/"
           >
-            Crowd Path
+            <img src={logo} alt="brand" width="120px" />
           </RRNavLink>
           {/* <NavbarToggler onClick={this.toggleNavbar} /> */}
           <Collapse isOpen={!this.state.collapsed} navbar>
