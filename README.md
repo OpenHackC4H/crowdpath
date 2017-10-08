@@ -1,6 +1,6 @@
 # CrowdPath
 
-![alt text](./frontend/src/crowdpath.png)
+![alt text](./frontend/src/crowdpathdark.png)
 
 
 ## Open Hack Gbg
