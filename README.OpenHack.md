@@ -1,2 +1,0 @@
-# CrowdPath
-## Open Hack Gbg
