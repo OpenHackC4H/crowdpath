@@ -1,7 +1,7 @@
 import * as types from "../constants/types";
 import axios from "axios";
 
-const API = "http://10.66.192.19:8080/articles";
+const API = "http://localhost:8080/articles";
 const config = {
   headers: { "X-Requested-With": "XMLHttpRequest" }
 };
