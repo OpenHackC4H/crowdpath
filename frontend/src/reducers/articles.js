@@ -1,7 +1,7 @@
 import * as types from "../constants/types";
 
 export default function reduceArticles(
-  state = { articles: [], tags: [], fetchStatus: "None" },
+  state = { articles: [], tags: [""], fetchStatus: "None" },
   action
 ) {
   switch (action.type) {
@@ -23,7 +23,11 @@ export default function reduceArticles(
           article => (article.id === action.id ? action.payload : article)
         )
       };
-
+    case types.SEARCH:
+      return {
+        ...state,
+        tags: action.payload
+      };
     default:
       return state;
   }
