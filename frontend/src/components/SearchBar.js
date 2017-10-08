@@ -11,13 +11,13 @@ class SearchBar extends Component {
   }
 
   onInputChange(searchString) {
-    this.setState({searchString});
+    this.setState({ searchString });
   }
 
   render() {
     return (
       <div>
-        <InputGroup>
+        <InputGroup style={style}>
           <Input
             type="text"
             value={this.state.searchString}
@@ -32,3 +32,8 @@ class SearchBar extends Component {
 }
 
 export default SearchBar;
+
+const style = {
+  maxWidth: "600px",
+  margin: "20px auto"
+};
