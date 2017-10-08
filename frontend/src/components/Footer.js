@@ -7,7 +7,7 @@ class Footer extends React.Component {
     return (
       <footer className="Footer">
         <div className="Footer-header">
-          <p className="lead">Developed for Open Hack</p>
+          <p className="lead">Developed for Open Hack Gothenburg</p>
         </div>
       </footer>
     );
