@@ -29,28 +29,18 @@ const ArticleCard = ({
         </ListGroupItemText>
       </Col>
       <Col>
-        <Row>
-          <Col>
-            <ListGroupItemText>
-              <span className="lead" style={upVotesStyle}>
-                {upVotes > 1000
-                  ? `${Math.ceil(upVotes / 100) / 10}k`
-                  : upVotes}{" "}
-                ↑
-              </span>
-            </ListGroupItemText>
-          </Col>
-          <Col>
-            <ListGroupItemText>
-              <span className="lead" style={downVotesStyle}>
-                {downVotes > 1000
-                  ? `${Math.ceil(downVotes / 100) / 10}k`
-                  : downVotes}{" "}
-                ↓
-              </span>
-            </ListGroupItemText>
-          </Col>
-        </Row>
+        <ListGroupItemText style={{ float: "right" }}>
+          <span className="lead" style={upVotesStyle}>
+            {upVotes > 1000 ? `${Math.ceil(upVotes / 100) / 10}k` : upVotes} ↑
+          </span>{" "}
+          {" "}
+          <span className="lead" style={downVotesStyle}>
+            {downVotes > 1000
+              ? `${Math.ceil(downVotes / 100) / 10}k`
+              : downVotes}{" "}
+            ↓
+          </span>
+        </ListGroupItemText>
       </Col>
     </Row>
   );
@@ -60,7 +50,8 @@ export default ArticleCard;
 
 const votesStyle = {
   margin: "auto",
-  float: "right"
+  marginRight: "10px",
+  marginLeft: "10px"
 };
 
 const upVotesStyle = {
