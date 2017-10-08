@@ -36,7 +36,7 @@ const listStyle = {
   display: "block",
   float: "left",
   margin: "auto",
-  width: "90%",
+  width: "65%",
   textAlign: "left",
   border: "none"
 };
