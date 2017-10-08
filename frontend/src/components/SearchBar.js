@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { InputGroup, InputGroupButton, Input } from "reactstrap";
-import "./SearchBar.css";
+
 
 class SearchBar extends Component {
   constructor(props) {
