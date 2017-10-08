@@ -10,22 +10,41 @@ class SearchBar extends Component {
     };
   }
 
-  onInputChange(searchString) {
-    this.setState({ searchString });
+  handleSubmit = e => {
+    e.preventDefault();
+
+    this.setState({
+      searchString: ""
+    });
+    this.props.actions(this.breakString(this.state.searchString));
+  };
+
+  handleChange = e => {
+    this.setState({
+      searchString: e.target.value
+    });
+  };
+
+  breakString(string) {
+    return string.split(" ");
   }
 
   render() {
     return (
       <div>
-        <InputGroup style={style}>
-          <Input
-            type="text"
-            value={this.state.searchString}
-            onChange={e => this.onInputChange(e.target.value)}
-            placeholder="What do you need?"
-          />
-          <InputGroupButton color="primary">Find it!</InputGroupButton>
-        </InputGroup>
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <InputGroup style={style}>
+            <Input
+              type="text"
+              value={this.state.searchString}
+              onChange={this.handleChange.bind(this)}
+              onKeyDown={e =>
+                e.key === "Enter" ? this.handleSubmit.bind(this) : null}
+              placeholder="What do you need?"
+            />
+            <InputGroupButton color="primary">Find it!</InputGroupButton>
+          </InputGroup>
+        </form>
       </div>
     );
   }
