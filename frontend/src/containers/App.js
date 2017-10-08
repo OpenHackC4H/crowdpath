@@ -6,6 +6,7 @@ import Background from "../components/Background";
 import Footer from "../components/Footer";
 import { connect } from "react-redux";
 import { showAllArticles } from "../actions";
+import logo from "../crowdpath.png";
 
 import ListView from "../components/ListView";
 
@@ -21,14 +22,16 @@ class App extends Component {
       <div className="App">
         <Background />
         <Container className="App-title">
+          <img src={logo} alt="logo" />
           {/* <h1 className="App-title display-4">Crowd Path</h1> */}
           <SearchBar />
+          <p className="App-intro">
+            Explore our selected topics - or - search something
+          </p>
         </Container>
-        <p className="App-intro">
-          Explore our selected topics - or - search something
-        </p>
+
         <ListView payload={articles} />
-          <Footer className="footer" />
+        <Footer className="footer" />
       </div>
     );
   }

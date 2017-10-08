@@ -18,7 +18,7 @@
   font-size: 1.5em;
   position: relative;
   color: white;
-  padding-top: 75px;
+  padding-top: 50px;
 }
 
 .App-intro {
@@ -28,7 +28,7 @@
 canvas {
   position: absolute;
   display: block !important;
-  max-height: 200px;
+  max-height: 325px;
 }
 
 @keyframes App-logo-spin {
