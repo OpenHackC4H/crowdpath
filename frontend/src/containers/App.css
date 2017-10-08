@@ -28,7 +28,7 @@
 canvas {
   position: absolute;
   display: block !important;
-  max-height: 325px;
+  max-height: 330px;
 }
 
 @keyframes App-logo-spin {
@@ -38,11 +38,4 @@ canvas {
   to {
     transform: rotate(360deg);
   }
-}
-
-.footer {
-  bottom: 0;
-  position: absolute;
-  color: white;
-  padding-top: 55px;
 }
