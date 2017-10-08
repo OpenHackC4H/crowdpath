@@ -42,5 +42,5 @@ export default connect(mapStateToprops, null)(DetailedView);
 
 const iframeStyle = {
   width: "100%",
-  marginTop: "75px"
+  marginTop: "17px"
 };
